@@ -12,6 +12,9 @@ RUN pip install \
     jupyter_contrib_nbextensions \
     mpld3
 
+# Set up notebook config
+COPY jupyter_notebook_config.py /root/.jupyter/
+
 # Jupyter notebook setup
 RUN jupyter contrib nbextension install --user
 RUN jupyter nbextensions_configurator enable --user
